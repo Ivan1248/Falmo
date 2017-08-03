@@ -1,0 +1,71 @@
+﻿1) Izgradnja modela prostora (okoline) (3D rekonstrukcija)
+	- Model prostora služi određivanju položaja robota i pamćenju informacija o stanju okoline.
+	- postupak rekonstrukcije: SLAM, SfM?
+	- načini snimanja (ne moraju se međusobno isključivati):
+			1. korisnik snimi sve kamerom (jednostavnije za početak)
+			2. robot snimi sve
+	- prilagođavanje rekonstrukcije na temelju najnovijih snimki robota
+	- mogući problemi:
+		- početno istraživanje i izgradnja modela dvorišta
+2) Percepcija
+	- repoznavanje objekata, visoke trave i uključivanje informacija o travi u model prostora
+		- konvolucijska mreža - semantička segmentacija
+		- razredi: 
+			- visoka trava (treba kositi)
+			- niska trava, tlo bez trave (moguće kretanje preko takve površine)
+			- čovjek ili neka druga životinja koja je jako blizu (zaustaviti košenje ako je jako blizu i nastaviti kada se udalji ili pratiti i lajati u slučaju mačke)
+			- ostalo (grm, rupa, zid, stablo, kamen,  ...) (stvari koje treba izbjegavati)
+	- dodatno/alternativno za bolje prepoznavanje trave:
+		- prepoznavanje dubine - određivanje udaljenosti (i pomoću toga visine) biljaka
+			- označavanje podataka - snimanje trave uz i bez svjetla - dobivanje dubinske mape
+			- kamera s i bez izvora svjetlosti uz kameru (izvor svjetlosti možda obojana svjetleća dioda)
+	- prepoznavanje vlažnosti
+	- prepoznavanje podignutosti
+	- mogući problemi:
+		- sjene
+		- ekspozicija
+3) Korisničko sučelje (program za npr. Android)
+	- prikaz rekonstrukcije (s plohama i teksturama)
+	- označavanje granica na rekonstrukciji
+	- označavanje u korisničkom sučelje gdje je trava visoka/niska ako robot nije dobro prepoznao?
+		-> učenje
+	- mogućnost ručnog upravljanja (radi testiranja i zabave)
+4) Povezivanje
+	- WiFi
+5) Hardver
+	- verzija s mobitelom:
+		"Za početak bi jače računalo slalo signale preko WiFi-ja na mobitel koji ima server. Mobitel onda upravljačke signale preko utičnice za slušalice šalje jednostavnom kombinacijskom logičkom sklopu koji pokreće točkove. Mobitel isto sliku šalje preko WiFi-ja."
+		- upravljanje: 
+			1) početni signal preko izlaza za zvuk (lijevi i desni): -8.1mV/0/8.1mV sa šiljcima (derivacija pilastog signala)  '''
+			2) pojačavanje pomoću 2 operacijska pojačalia s pragovima +-4mV (LM324 ili LMC6062(manji pomak ulaznog napona)) (paziti na pomak od 2mV) na 5V/0/5V i izglađivanje RC krugovima
+			3) ušravljanje motorima za pomicanje h-mostom pomoću L293 (kojeg već imam)
+	- verzija s Raspberry PI-jem:
+		- maksimalna potrošnja energije:
+			* runmyrobot.com: 6800mAh/4h, 3.7V -> 7W
+			- Raspberry Pi 3 (CPU 100%): 730mA (5V) -> 3.65W
+			- kamera:
+				- RPi-kamera: 260mA -> 1.3W
+				- USB-kamera: 260mA -> 1.3W
+			- WiFi: 2.5W
+			- ukupno: 3.65W + 1.3W + 2.5 = 7.45W
+		- dijelovi:
+			- elektronika:
+				- računalo: Raspberry Pi 3 B
+				- kamera: USB-kamera
+				- LED uz kameru?
+				- senzor za gašenje računala u slučaju slabe baterije
+			- energija:
+				- punjiva baterija, 5V
+				- fotonaponska čelija
+			- mehanika:
+				- pokretanje:
+					- 2 točka
+					- za svaki točak motor s prijenosom (kako bi se točkovi sporije okretali)
+				- košenje:
+					- motor
+					- dio za rezanje: čep s komadom žice
+		- mogući problemi:
+			- Raspberry PI je preslab
+			- podaci za učenje
+			- dijelovi
+			- kiša, vjetar	
