@@ -14,7 +14,7 @@
 				(+) brz
 ¸				(-) rijetka rekonstrukcija
 			- LSD-SLAM:
-				(~) rijetka/polugusta rekonstrukcija (rubovi)
+				(+) polugusta rekonstrukcija (rubovi)
 				(-) sporiji od ORB-SLAM-a
 		- još se može iskorištavati: 
 			- poznata udaljenost koju robot prijeđe u jednici vremena kao referentna mjera udaljenosti
