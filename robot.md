@@ -17,7 +17,7 @@
 				(~) rijetka/polugusta rekonstrukcija (rubovi)
 				(-) sporiji od ORB-SLAM-a
 		- još se može iskorištavati: 
-			- poznata udaljenost koju robot prijeđe u jednici vremena kao referentna mjera veličine
+			- poznata udaljenost koju robot prijeđe u jednici vremena kao referentna mjera udaljenosti
 			- akcelerometar, žiroskop		
 	- načini snimanja (ne moraju se međusobno isključivati):
 			1. korisnik snimi sve kamerom (jednostavnije za početak)
