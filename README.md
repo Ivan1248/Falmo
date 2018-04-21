@@ -1,4 +1,4 @@
-# Falmo
+# Lawn rover
 
 <img src="https://github.com/Ivan1248/Falmo/blob/master/other/images/model.png" width="50%"/>
 
