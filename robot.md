@@ -6,7 +6,7 @@
 		- algoritam:
 			- CNN-SLAM:
 				(+) gusta rekonstrukcija, robustan, semantička segmentacija
-				(-) vjerojatno spor
+				(-) spor
 			- PL-SLAM:
 				(+) brz
 				(-) rijetka rekonstrukcija
