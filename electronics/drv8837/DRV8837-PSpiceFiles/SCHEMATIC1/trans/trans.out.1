@@ -1,0 +1,64 @@
+
+**** 10/07/13 13:19:16 ******* PSpice 16.2.0 (Oct 2008) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\a0867324\Documents\Docs-Projects\SPICE Models\HVAL_Models\DRV8837\PSPICE\V0\drv8837-pspic
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../drv8837.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.2\tools\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10m 0 20U SKIPBP 
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DRV8837
+L_L1         N15202 N15179  30u  
+R_R2         N15619 N15513  100u  
+V_V1         IN1 0 5
+X_H1    N15619 0 N15179 N15305 SCHEMATIC1_H1 
+L_L2         N15513 N15660  250u  
+V_V2         IN2 0 0
+X_U1         IN1 IN2 VCC VCC 0 N15227 N15334 DRV8837 
+X_H2    N15305 N15334 N15660 0 SCHEMATIC1_H2 
+R_R1         N15227 N15202  22  
+V_V3         VCC 0 5.5
+
+.subckt SCHEMATIC1_H1 1 2 3 4  
+H_H1         3 4 VH_H1 50e-3
+VH_H1         1 2 0V
+.ends SCHEMATIC1_H1
+
+.subckt SCHEMATIC1_H2 1 2 3 4  
+H_H2         3 4 VH_H2 50e-3
+VH_H2         1 2 0V
+.ends SCHEMATIC1_H2
+
+**** RESUMING trans.cir ****
+.END
+
+WARNING -- Library file "C:\Users\a0867324\Documents\Docs-Projects\SPICE Models\HVAL_Models\DRV8837\PSPICE\V0\drv8837.lib" has changed since index file drv8837.ind was created.
+WARNING -- The timestamp changed from Mon Oct 07 13:18:44 2013 to Mon Oct 07 13:19:13 2013.
+Making new index file drv8837.ind for library file drv8837.lib
+Index has 10 entries from 1 file(s).
+
+ERROR -- Less than 2 connections at node X_U1.32
+ERROR -- Node X_U1.32 is floating

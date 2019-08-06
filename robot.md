@@ -13,8 +13,8 @@
 			- ORB-SLAM:
 				(+) brz
 ¸				(-) rijetka rekonstrukcija
-			- LSD-SLAM:
 				(+) polugusta rekonstrukcija (rubovi)
+			- LSD-SLAM:
 				(-) sporiji od ORB-SLAM-a
 		- još se može iskorištavati: 
 			- poznata udaljenost koju robot prijeđe u jednici vremena kao referentna mjera udaljenosti
