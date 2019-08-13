@@ -1,0 +1,32 @@
+Version 4
+SymbolType BLOCK
+RECTANGLE Normal -64 -72 48 72
+WINDOW 0 -7 -72 Bottom 2
+WINDOW 3 -7 72 Top 2
+SYMATTR Value AD626
+SYMATTR Prefix X
+SYMATTR ModelFile D:\Google Drive\Projects\Falmo\electronics\ad626.cir
+PIN -64 -48 LEFT 8
+PINATTR PinName -IN
+PINATTR SpiceOrder 1
+PIN -64 -16 LEFT 8
+PINATTR PinName +IN
+PINATTR SpiceOrder 2
+PIN -64 16 LEFT 8
+PINATTR PinName -Vs
+PINATTR SpiceOrder 3
+PIN -64 48 LEFT 8
+PINATTR PinName +Vs
+PINATTR SpiceOrder 4
+PIN 48 -48 RIGHT 8
+PINATTR PinName G100
+PINATTR SpiceOrder 5
+PIN 48 -16 RIGHT 8
+PINATTR PinName FILT
+PINATTR SpiceOrder 6
+PIN 48 16 RIGHT 8
+PINATTR PinName GND
+PINATTR SpiceOrder 7
+PIN 48 48 RIGHT 8
+PINATTR PinName OUT
+PINATTR SpiceOrder 8
