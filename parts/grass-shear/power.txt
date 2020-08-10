@@ -1,4 +1,6 @@
 https://www.ebay.com/itm/Garden-Tools-Grass-Trimmer-3-6V-Lithium-1500mAh-Cordless-Hedge-Shears-Lawn-Mower/133039837890?hash=item1ef9cad2c2:m:mcolxw-23f_xW5Yj7SfDXjQ
+height 11cm
+
 3.6 V
 1.5 Ah = 1.5*3600 As 
 30 min = 1800 s

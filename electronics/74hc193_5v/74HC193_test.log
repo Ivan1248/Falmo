@@ -1,0 +1,30 @@
+Circuit: * D:\Google Drive\Projects\Falmo\electronics\74hc193_5v\74HC193_test.asc
+
+Limiting rise time of source v5 to 1e-006
+Limiting fall time of source v5 to 1e-006
+WARNING: Less than two connections to node Q0.  This node is used by A:X1:35.
+WARNING: Less than two connections to node Q1.  This node is used by A:X1:36.
+WARNING: Less than two connections to node Q2.  This node is used by A:X1:37.
+WARNING: Less than two connections to node Q3.  This node is used by A:X1:38.
+WARNING: Less than two connections to node TC\_D.  This node is used by A:X1:39.
+WARNING: Less than two connections to node TC\_U.  This node is used by A:X1:40.
+Direct Newton iteration for .op point succeeded.
+Changing Tseed to 1e-012
+
+Date: Mon Aug 12 13:55:45 2019
+Total elapsed time: 5.121 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 145840
+traniter = 145833
+tranpoints = 72062
+accept = 71558
+rejected = 503
+matrix size = 76
+fillins = 0
+solver = Normal
+Matrix Compiler1: 1.13 KB object code size  0.4/0.4/[0.3]
+Matrix Compiler2: off  [0.3]/1.0/0.4
+
