@@ -1,0 +1,93 @@
+* D:\GoogleDrive\Projects\Falmo\electronics\decoder.asc
+R20 N014 N013 10k
+C10 0 N014 100n
+R21 N020 N019 10k
+C1 N020 0 100n
+R5 N012 N013 10k
+R13 N012 0 10k
+R14 N019 N017 10k
+R18 N017 0 10k
+C5 N015 0 680n
+L5 N015 0 4.7m
+R26 N015 N010 2k
+C4 N021 0 150n
+L2 N021 0 4.7m
+R16 N021 N010 2k
+R7 Vinr P001 100
+R17 Vt N009 10k
+R22 N003 N009 10k
+R25 N003 0 10k
+V1 N008 0 3.6 Rser=0
+C6 N008 0 1000µ Rser=2
+C7 N008 0 100n
+R6 N024 N023 10k
+C8 N024 0 100n
+R8 N023 N022 10k
+R9 N022 0 10k
+C9 N025 0 150n
+L1 N025 0 2.7m
+R10 N025 N010 2k
+C12 N011 0 1µ
+L3 N011 0 10m
+R11 N011 N010 2k
+B1 P001 0 V=0.2*sin(2*pi*time*10000*(time/2))*buf(-sin(time*400)+0.5)+0.1*sin(2*pi*(1592*time+0.5))
+R2 N002 N007 10k
+R3 N002 0 10k
+R12 Vw N007 10k
+C3 0 Vw 100n
+XU1 N025 N022 V+ 0 N023 LT1078
+XU2 N024 Vt V+ 0 Vin2 LT1078
+XU3 N020 Vt V+ 0 Vin1 LT1078
+XU4 N021 N017 V+ 0 N019 LT1078
+XU5 N015 N012 V+ 0 N013 LT1078
+XU6 N014 Vt V+ 0 Vsh LT1078
+XU7 N011 N003 V+ 0 N009 LT1078
+XU8 Vinr N002 V+ 0 N007 LT1078
+R4 V+ N008 100m
+C2 N010 Vinr 10µ
+V2 N018 0 PULSE(0 7 0 0 0 0.1 0.2)
+R1 0 P002 2
+L4 N016 P002 1m
+M2 V+ N018 N016 N016 Si3460DV
+R15 V+ N006 1000k
+R19 N006 0 10k
+XU9 N006 N001 V+ 0 N001 LT1078
+V3 N005 0 SINE(0 1 100 0 0 0.1 1000)
+R24 N006 N005 100k
+C11 N004 N001 10µ
+R23 0 N004 100
+.model NMOS NMOS
+.model PMOS PMOS
+.lib D:\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.mos
+.lib LM324.ti.lib
+.tran 0 1 0 0.001
+* smoothing f.
+* smoothing f.
+* comparator
+* comparator
+* rect. amp.
+* rect. amp.
+.lib Ltc.lib
+* smoothing f.
+* rect. amp.
+* more capacitors beacause of ESR and ESL
+* Motor noise: https://www.pololu.com/docs/0J15/9
+* bandwidth=1/(RC)/(2*pi) [Hz]
+* center frequency f_c= 1/sqrt(LC)/(2*pi) [Hz]
+* L = 1/(4*pi^2*f_c^2*C)
+* smoothing f.
+* comparator
+* rect. amp.
+* If the 2 op-amp resistors are equal, A=1+R/R=2
+* rect. amp.
+* smoothing f.
+* SLEW RATE TOO LOW?\nhttps://www.electronics-notes.com/articles/analogue_circuits/operational-amplifier-op-amp/slew-rate.php
+* 3559Hz
+* 4520Hz
+* 5427Hz
+* 1592Hz
+* Wider band results in less distortion\nof square signals, but this requires\nhigher inductances in the RLC circuits.
+* 1s ~ 10kHz
+.lib LTC.lib
+.backanno
+.end

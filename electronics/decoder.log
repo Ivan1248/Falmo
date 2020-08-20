@@ -1,5 +1,7 @@
 Circuit: * D:\GoogleDrive\Projects\Falmo\electronics\decoder.asc
 
+Limiting rise time of source v2 to 0.01
+Limiting fall time of source v2 to 0.01
 Early termination of direct N-R iteration.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
@@ -22,21 +24,21 @@ Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
 
-Date: Fri Aug 07 14:00:02 2020
-Total elapsed time: 86.487 seconds.
+Date: Thu Aug 20 08:59:19 2020
+Total elapsed time: 5.444 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 1544939
-traniter = 1544608
-tranpoints = 531337
-accept = 390423
-rejected = 140914
-matrix size = 77
-fillins = 77
+totiter = 84488
+traniter = 84156
+tranpoints = 30564
+accept = 22315
+rejected = 8249
+matrix size = 96
+fillins = 87
 solver = Normal
-Thread vector: 45.1/17.7[8] 15.5/10.4[8] 6.8/4.6[6] 0.3/3.1[1]  2592/500
-Matrix Compiler1: 9.62 KB object code size  3.9/2.6/[1.2]
-Matrix Compiler2: 7.55 KB object code size  1.6/2.5/[0.4]
+Thread vector: 69.8/28.3[8] 19.9/11.0[8] 8.1/5.2[8] 0.9/1.1[1]  2592/500
+Matrix Compiler1: 11.14 KB object code size  5.3/2.8/[1.1]
+Matrix Compiler2: 9.18 KB object code size  2.0/2.7/[1.0]
 
